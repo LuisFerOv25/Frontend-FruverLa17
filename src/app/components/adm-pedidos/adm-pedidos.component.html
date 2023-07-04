@@ -1,0 +1,49 @@
+
+
+<div class="container">
+    <div class="text-center">
+        <h1>Administración de Pedidos y Productos</h1>
+    </div>
+    <div class="text-center">
+      <h2>Pedidos</h2>
+    </div>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Detalle</th>
+          <th>Cantidad</th>
+          <th>Fecha</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pedido of pedidos | async">
+          <td>{{ pedido.idPedido }}</td>
+          <td>{{ pedido.detalle }}</td>
+          <td>{{ pedido.cantidad }}</td>
+          <td>{{ pedido.fecha }}</td>
+          <td>
+            <fieldset class="form-group col-sm-1">
+              <a class="btn btn-info" [routerLink]="['/pedidos/editar/', pedido.idPedido]">Editar</a>
+            </fieldset>
+          </td>
+          <td>
+            <fieldset class="form-group col-sm-1">
+                <a class="btn btn-danger" (click)="borrarPedido(pedido.idPedido)">Borrar</a>
+              </fieldset>
+          </td>
+        </tr>
+        
+        <!-- Agrega más filas según sea necesario -->
+      </tbody>
+    </table>
+    <div class="text-center">
+      <button class="btn btn-secondary" (click)="atras()">Atrás</button>
+    </div>
+    
+    
+  </div>
+  

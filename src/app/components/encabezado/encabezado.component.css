@@ -1,0 +1,8 @@
+.header {
+    padding: 20px;
+    position: relative;
+    left: 95%;
+}
+.search-input {
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+  }

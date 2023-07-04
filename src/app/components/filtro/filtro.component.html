@@ -1,0 +1,22 @@
+<div class="space" *ngIf="!esVisible()">
+ 
+        <div class="d-flex gap-3">
+            <div class="titulo">
+                <legend><h6>Filtro</h6></legend>
+            </div>
+                <div class="row align-items-center">
+                    <div class="col-2">
+                    <select class="form-control" id="categoria" name="categoria" required [(ngModel)]="categoriaSeleccionada" (ngModelChange)="onCategoriaSeleccionadaChange()">
+                        <option value="" >todos</option>
+                        <option value="citrico">citrico</option>
+                        <option value="pepita">de pepita</option>
+                        <option value="tropical">tropicales</option>
+                    <option value="baya">bayas</option>
+                    <option value="temporada">de temporada</option>
+                    </select>
+                    </div>
+                </div>
+            
+        </div>
+    
+</div>  

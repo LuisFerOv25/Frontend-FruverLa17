@@ -1,0 +1,13 @@
+.card{
+    border-radius: 20px;
+    width: 10.5rem;
+}
+.card-text{
+    font-size: small;
+    text-align: justify;
+}
+.card-img-top{
+    border-start-end-radius: 20px;
+    border-start-start-radius: 20px;
+    background-image: rgb(6, 54, 118);
+}

@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title text-center">Edicion de datos</h3>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit()" #pedidoForm="ngForm">
+              <fieldset class="form-group">
+                <div class="mb-3 text-center">
+                  <label for="detalle" class="form-label">Detalle</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="detalle"
+                    name="detalle"
+                    required
+                    [(ngModel)]="pedido.detalle"
+                  />
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="mb-3 text-center">
+                  <label for="email" class="form-label">Cantidad</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="cantidad"
+                    name="cantidad"
+                    required
+                    [(ngModel)]="pedido.cantidad"
+                  />
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <div class="mb-3 text-center">
+                  <label for="fecha" class="form-label">Fecha</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="fecha"
+                    name="fecha"
+                    required
+                    [(ngModel)]="pedido.fecha"
+                  />
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary" [disabled]="!pedidoForm.form.valid">Actualizar</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    

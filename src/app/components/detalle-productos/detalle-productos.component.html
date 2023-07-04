@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+  <div class="container">
+    <div class="product" *ngIf="producto">
+      <div class="product-image">
+        <img [src]="producto.imagen" alt="Imagen del producto">
+      </div>
+      <div class="product-description">
+        <h2 class="product-title">{{producto.nombre}}</h2>
+        <p class="product-price">Precio: {{producto.precio}}$</p>
+        <div class="product-details">
+          <p><strong>Cantidad: </strong>{{producto.cantidad}}</p>
+          <div>
+            <input type="number" [(ngModel)]="pedido.cantidad" name="cantidad" class="quantity-input" placeholder="1" min="1">
+          </div>
+        </div>
+        <p class="product-description">{{producto.detalle}}</p>
+      </div>  
+      <fieldset class="form-group">
+        <div class="buy-button">
+          <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.valid">Comprar</button>
+        </div>
+      </fieldset>
+
+    </div>
+    <div class="text-center">
+      <button class="btn btn-secondary" (click)="atras()">Atrás</button>
+    </div>
+  </div>
+</form>

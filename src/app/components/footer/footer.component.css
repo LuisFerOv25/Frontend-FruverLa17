@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding-bottom: 60px; /* Ajusta este valor según la altura de tu footer */
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Ajustar el footer al final de la página */
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}

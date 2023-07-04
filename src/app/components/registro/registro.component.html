@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title text-center">Registro</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+            <fieldset class="form-group">
+              <div class="mb-3 text-center">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Nombre"
+                  required
+                  [(ngModel)]="usuario.nombre"
+                />
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <div class="mb-3 text-center">
+                <label for="direccion" class="form-label">Direccion</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="direccion"
+                  name="direccion"
+                  placeholder="Manzana 16 CS9 Pasto"
+                  required
+                  [(ngModel)]="usuario.direccion"
+                />
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <div class="mb-3 text-center">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="correo"
+                  name="correo"
+                  placeholder="correo@example.com"
+                  required
+                  [(ngModel)]="usuario.correo"
+                />
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <div class="mb-3 text-center">
+                <label for="password" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="contrasena"
+                  name="contrasena"
+                  placeholder="Contraseña"
+                  required
+                  [(ngModel)]="usuario.contrasena"
+                />
+              </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.form.valid">Registrarse</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br>
+  <div class="text-center">
+    <button class="btn btn-warning" [routerLink]="['/productos']">Inicio</button>
+  </div>
+</div>
+
+  

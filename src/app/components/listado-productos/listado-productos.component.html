@@ -1,0 +1,20 @@
+
+<div class="container d-grid gap-5" >
+  <div class="row align-items-center" >
+    <div *ngFor="let producto of productos | async" class="col-2">
+      <div class=""*ngIf="categoriaSeleccionada === null || producto.categoria === categoriaSeleccionada">
+      <div class="card gap-3" >
+        <img src="{{producto.imagen}}" class="card-img-top" width="200" height="150" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ producto.nombre }}</h5>
+          <p class="card-text">{{ producto.detalle }}</p>
+          <p class="card-title">Cantidad: {{ producto.cantidad }}</p>
+          <p class="card-title">Precio: {{ producto.precio }}$</p>
+          <a class="btn btn-primary mx-4" [routerLink]="['/productos/detalles/', producto.idProducto]">Detalles</a>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  </div>
+</div>

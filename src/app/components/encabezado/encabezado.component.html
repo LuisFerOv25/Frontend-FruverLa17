@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/productos']">
+            <img [src]="logo" alt="" width="65" height="53">
+          </a>      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="!esVisible()">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-5" *ngIf="!esVisibleReg()">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  [routerLink]="['/productos']">Inicio</a>
+          </li>
+
+          
+          <form class="d-flex" role="search">
+            <input class="form-control gap-2 rounded-pill search-input" id="nombre" name="nombre" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="nombre">
+            <a class="btn btn-outline-success rounded-pill">Buscar</a>
+          </form>
+
+        </ul>
+
+        <div class="row" *ngIf="router.url === '/productos'">
+          <div class="col-6">
+            <form class="" role="search">
+              <button class="btn btn-outline-warning rounded-pill" type="submit" [routerLink]="['/acceder']">Acceder</button>
+            </form>
+          </div>
+          <div class="col-6">
+            <form class="" role="search">
+              <button class="btn btn-outline-secondary rounded-pill" type="button" [routerLink]="['/registro/usuarios']">Registrate</button>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="esVisible()">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="header text-center">
+            <h1>Dashboard Frutería la 17</h1>
+          </div>
+          </ul>
+      </div>
+      <div class="row" *ngIf="esVisible()">
+        <div class="col-12">
+          <form class="" role="search">
+            <button class="btn btn-outline-secondary rounded-pill" type="button" (click)="logout()">Cerrar sesión</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </nav>

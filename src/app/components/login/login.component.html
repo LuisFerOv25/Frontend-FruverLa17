@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title text-center">Iniciar sesión</h3>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-3 text-center">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="text" class="form-control" id="correo" name="correo" placeholder="correo@example.com"  [(ngModel)]="correo">
+              </div>
+              <div class="mb-3 text-center">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña"  [(ngModel)]="contrasena">
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary" >Iniciar sesión</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <br>
+        <div class="text-center">
+          <button class="btn btn-warning" [routerLink]="['/productos']">Inicio</button>
+        </div>
+      </div>
+    </div>
+  </div>
